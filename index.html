@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apar Agarwal - Software Developer Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Apar Agarwal - Full-stack software developer specializing in modern web technologies like React, Node.js, and the MERN stack. View my projects and get in touch."
+    />
+    <meta
+      name="keywords"
+      content="Apar Agarwal, software developer, web developer, React, Node.js, MERN stack, portfolio, full-stack developer"
+    />
+    <meta name="author" content="Apar Agarwal" />
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta
+      property="og:title"
+      content="Apar Agarwal - Software Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Full-stack software developer passionate about building innovative digital solutions. Specializing in React, Node.js, and modern web technologies."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aparagarwal.tech" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Apar Agarwal - Software Developer Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Full-stack software developer specializing in React, Node.js, and the MERN stack."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-resume-viewer.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asimovian&family=Borel&family=Bytesized&family=Comfortaa:wght@300..700&family=Outfit:wght@100..900&family=Playwrite+BE+WAL:wght@100..400&family=Poiret+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/e5bded4170.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Header Navigation -->
+    <header>
+      <nav aria-label="Main navigation">
+        <div class="logo">
+          <button
+            class="hamburger-menu"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </button>
+          <div class="logo-text">Apar Agarwal</div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About Me</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="social">
+          <a
+            href="https://github.com/aparagarwal"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/aparagarwal/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://leetcode.com/u/aparagarwal/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Leetcode profile"
+            ><i class="fa-solid fa-code"></i
+          ></a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="hero">
+        <div class="hero-image"></div>
+        <div class="gradient-overlay"></div>
+        <div class="hero-section">
+          <h2>Hello <span class="dot">.</span></h2>
+          <p>
+            <span class="dot">&lt;</span>I'm Apar<span class="dot">&gt;</span>
+          </p>
+          <h1>
+            <span class="typing-effect"></span>
+            <span class="cursor">|</span>
+          </h1>
+          <div class="cta">
+            <a href="#contact" class="btn-flip-link">
+              <button
+                class="btn-flip"
+                data-back="Contact Me &gt;"
+                data-front="Got a Project?"
+              ></button>
+            </a>
+            <a href="/" class="resume-link" id="openResumeViewer">
+              <button class="secondary">
+                <svg>
+                  <rect x="0" y="0" width="100%" height="100%"></rect>
+                </svg>
+                My Resume
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="skills-carousel">
+          <div class="carousel-ribbon-wrapper">
+            <!-- Top Ribbon (moves right to left) -->
+            <div class="carousel-ribbon main-ribbon">
+              <div class="carousel-track track-forward"></div>
+            </div>
+            <!-- Bottom Ribbon (moves left to right) -->
+            <div class="carousel-ribbon reflection-ribbon">
+              <div class="carousel-track track-reverse"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="about-container">
+          <div class="about-header">
+            <span class="section-label">ABOUT ME</span>
+          </div>
+          <h1 class="about-headline">
+            A software developer passionate about building innovative digital
+            solutions.
+          </h1>
+          <p class="about-description">
+            Specializing in full-stack web development with expertise in modern
+            technologies like React, Node.js, and the MERN stack. I transform
+            complex ideas into elegant, scalable applications that deliver
+            exceptional user experiences and drive real business value.
+          </p>
+        </div>
+      </section>
+      <section id="skills">
+        <div class="skills-container">
+          <div class="skills-header">
+            <span class="section-label">MY SKILLS</span>
+          </div>
+          <div class="skills-grid">
+            <!-- Frontend Technologies -->
+            <div class="skill-card">
+              <div class="skill-icon html">
+                <i class="fab fa-html5"></i>
+              </div>
+              <h3>HTML</h3>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon css">
+                <i class="fab fa-css3-alt"></i>
+              </div>
+              <h3>CSS</h3>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon javascript">
+                <i class="fab fa-js"></i>
+              </div>
+              <h3>JAVASCRIPT</h3>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon react">
+                <i class="fab fa-react"></i>
+              </div>
+              <h3>REACT JS</h3>
+            </div>
+
+            <!-- Backend & Tools -->
+            <div class="skill-card">
+              <div class="skill-icon nodejs">
+                <i class="fab fa-node"></i>
+              </div>
+              <h3>NODE JS</h3>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon python">
+                <i class="fab fa-python"></i>
+              </div>
+              <h3>PYTHON</h3>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon mongodb">
+                <i class="fas fa-database"></i>
+              </div>
+              <h3>MONGODB</h3>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon git">
+                <i class="fab fa-git-alt"></i>
+              </div>
+              <h3>GIT</h3>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon github">
+                <i class="fab fa-github"></i>
+              </div>
+              <h3>GITHUB</h3>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon docker">
+                <i class="fab fa-docker"></i>
+              </div>
+              <h3>DOCKER</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+        <div class="education-container">
+          <div class="education-header">
+            <span class="section-label">EDUCATION</span>
+          </div>
+          <div class="education-timeline">
+            <div class="education-item">
+              <div class="timeline-connector">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="education-content">
+                <h3>Bachelor of Technology in Computer Science</h3>
+                <span class="education-institution"
+                  >Graphic Era Deemed to be University, Dehradun</span
+                >
+                <span class="education-year">2022 - 2026</span>
+                <p class="education-description">
+                  Focused on software engineering, data structures, algorithms,
+                  and full-stack web development.
+                </p>
+              </div>
+            </div>
+
+            <div class="education-item">
+              <div class="timeline-connector">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="education-content">
+                <h3>Senior Secondary Education (CBSE)</h3>
+                <span class="education-institution"
+                  >St. Mary's Convent Senior Secondary School, Gajraula</span
+                >
+                <span class="education-year">2021</span>
+                <p class="education-description">
+                  Completed senior secondary education with a focus on Physics,
+                  Chemistry, and Mathematics.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="container">
+          <div class="experience-section-header">
+            <span class="section-label">EXPERIENCE</span>
+          </div>
+          <div class="experience-timeline">
+            <div class="experience-card">
+              <div class="experience-header">
+                <div class="timeline-dot"></div>
+                <div class="experience-title">
+                  <h3>Open Source Contributor</h3>
+                  <span class="experience-org">Hacktoberfest</span>
+                </div>
+                <span class="experience-year">2025</span>
+              </div>
+              <div class="experience-content">
+                <p class="experience-description">
+                  Active contributor to open source repositories during
+                  Hacktoberfest. Improved documentation, fixed bugs, and added
+                  new features across multiple projects.
+                </p>
+                <div class="major-prs">
+                  <h4>Major PRs</h4>
+                  <ul class="pr-list">
+                    <li class="pr-item">
+                      <i class="fa-solid fa-code-merge"></i>
+                      <span
+                        >feat: implement authentication flow with protected
+                        routes and session validation</span
+                      >
+                      <span class="pr-date">Oct 2025</span>
+                    </li>
+                    <li class="pr-item">
+                      <i class="fa-solid fa-code-merge"></i>
+                      <span
+                        >feat: Implement all products page with infinite scroll
+                        and API integration</span
+                      >
+                      <span class="pr-date">Oct 2025</span>
+                    </li>
+                    <li class="pr-item">
+                      <i class="fa-solid fa-code-merge"></i>
+                      <span
+                        >feat: implement centralized API services with axios
+                        instance</span
+                      >
+                      <span class="pr-date">Oct 2025</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tech-tags">
+                  <span>Git</span>
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
+                  <span>React</span>
+                  <span>API Integration</span>
+                  <span>Authentication and Authorization</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <p>Here are some of my recent projects.</p>
+        </div>
+        <div class="card-stack-container">
+          <div class="card-stack">
+            <!-- Cards will be rendered via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications Section -->
+      <section id="certifications">
+        <div class="certifications-container">
+          <div class="certifications-header">
+            <span class="section-label">CERTIFICATIONS & ACHIEVEMENTS</span>
+          </div>
+          <div class="certifications-grid">
+            <div class="certification-card">
+              <div class="cert-icon">
+                <i class="fab fa-google"></i>
+              </div>
+              <h3>Foundations of Cybersecurity</h3>
+              <p class="cert-issuer">Google</p>
+              <span class="cert-year">2025</span>
+            </div>
+
+            <div class="certification-card">
+              <div class="cert-icon">
+                <i class="fab fa-git-alt"></i>
+              </div>
+              <h3>Version<br />Control</h3>
+              <p class="cert-issuer">Meta</p>
+              <span class="cert-year">2025</span>
+            </div>
+
+            <div class="certification-card">
+              <div class="cert-icon">
+                <i class="fab fa-react"></i>
+              </div>
+              <h3>React Basics & Advanced</h3>
+              <p class="cert-issuer">Meta</p>
+              <span class="cert-year">2025</span>
+            </div>
+
+            <div class="certification-card">
+              <div class="cert-icon">
+                <i class="fab fa-meta"></i>
+              </div>
+              <h3>HTML and CSS in Depth</h3>
+              <p class="cert-issuer">Meta</p>
+              <span class="cert-year">2025</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="contact-container">
+          <h2 class="cta-headline">Let's Build Something Amazing Together</h2>
+          <p class="cta-subtext">
+            Have a project in mind? Let's collaborate and create something
+            extraordinary.
+          </p>
+          <div class="cta-buttons">
+            <a
+              href="mailto:aparagarwal01@gmail.com"
+              class="cta-email-btn"
+              aria-label="Send email to Apar Agarwal"
+            >
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              Get In Touch
+            </a>
+            <div class="cta-social-links">
+              <a
+                href="https://github.com/aparagarwal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="Visit GitHub profile"
+              >
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aparagarwal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="Visit LinkedIn profile"
+              >
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Decorative elements -->
+          <div class="cta-orb cta-orb-1" aria-hidden="true"></div>
+          <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
+          <div class="cta-orb cta-orb-3" aria-hidden="true"></div>
+        </div>
+        <!-- Back to Top Button -->
+        <button
+          class="back-to-top"
+          onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          aria-label="Back to top"
+        >
+          <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+        <!-- Copyright -->
+        <div class="copyright">
+          <p>&copy; 2026 Apar Agarwal. All rights reserved.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="cursor-dot" data-cursor-dot></div>
+
+    <!-- Resume Viewer Modal -->
+    <div class="resume-viewer-overlay" id="resumeViewerOverlay">
+      <div class="resume-mac-window">
+        <div class="mac-window-header">
+          <div class="window-dots">
+            <span class="dot-red" id="closeResumeViewer"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+          </div>
+          <span class="window-title">Resume.pdf</span>
+        </div>
+        <div class="mac-window-content">
+          <iframe
+            id="pdfIframe"
+            src="./pdf-viewer.html?file=./assets/resume.pdf"
+            frameborder="0"
+          ></iframe>
+        </div>
+        <a
+          href="./assets/resume.pdf"
+          download="Apar_Agarwal_Resume.pdf"
+          class="floating-download-btn"
+          aria-label="Download resume"
+        >
+          <i class="fas fa-download"></i>
+        </a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
