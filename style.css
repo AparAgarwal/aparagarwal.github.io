@@ -528,7 +528,8 @@ body.scrolling-up .track-reverse {
     gap: var(--spacing-md);
     padding: 30px;
     background: rgba(255, 255, 255, 0.02);
-    border-radius: var(--radius-md);
+    border-radius: 4px;
+    box-shadow: 9px 9px 20px 0px #000;
     transition: all var(--transition-smooth);
     cursor: default;
 }
