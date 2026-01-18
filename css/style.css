@@ -1907,7 +1907,7 @@ main>section {
     }
 
     .hero-image {
-        background: url('./assets/background.webp');
+        background: url('../assets/background.webp');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
