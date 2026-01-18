@@ -572,6 +572,12 @@ const initializeResumeViewer = () => {
             e.preventDefault();
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+
+            // Lazy load iframe
+            const iframe = document.getElementById('pdfIframe');
+            if (iframe && !iframe.src && iframe.getAttribute('data-src')) {
+                iframe.src = iframe.getAttribute('data-src');
+            }
         });
     }
 
@@ -603,4 +609,3 @@ const initializeResumeViewer = () => {
         }
     });
 };
-

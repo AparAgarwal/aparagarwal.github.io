@@ -1,8 +1,4 @@
-/* ============================================
-   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
-   ============================================ */
 :root {
-    /* Colors */
     --color-bg-primary: #040404;
     --color-bg-secondary: #000000;
     --color-bg-card: #1a1a1a;
@@ -13,51 +9,36 @@
     --color-text-secondary: rgba(255, 255, 255, 0.8);
     --color-text-muted: rgba(255, 255, 255, 0.6);
     --color-text-dim: rgba(255, 255, 255, 0.4);
-
-    /* Spacing */
     --spacing-xs: 5px;
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 40px;
     --spacing-xl: 80px;
-
-    /* Border Radius */
     --radius-sm: 12px;
     --radius-md: 16px;
     --radius-lg: 20px;
     --radius-full: 50px;
-
-    /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bouncy: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-
-    /* Fonts */
-    --font-main: 'Inter', sans-serif;
+    --font-main: 'Outfit', sans-serif;
     --font-display: 'Outfit', sans-serif;
     --font-accent: 'Borel', sans-serif;
     --font-casual: 'Comfortaa', sans-serif;
-
-    /* Shadows */
     --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 10px 40px rgba(192, 68, 49, 0.2);
     --shadow-lg: 0 15px 50px rgba(192, 68, 49, 0.25);
     --shadow-glow: 0 0 20px rgba(192, 68, 49, 0.6);
-
-    /* Grid & Layout */
     --grid-gap: 20px;
-    --container-max-width: 1200px;
+    --container-max-width: 1200px
 }
 
-/* ============================================
-   RESET & BASE STYLES
-   ============================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
+    user-select: none
 }
 
 body {
@@ -66,12 +47,9 @@ body {
     font-family: var(--font-main);
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden
 }
 
-/* ============================================
-   HEADER & NAVIGATION
-   ============================================ */
 header {
     height: 64px;
     padding: var(--spacing-md);
@@ -81,7 +59,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 10
 }
 
 nav {
@@ -89,7 +67,7 @@ nav {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-md)
 }
 
 nav .logo {
@@ -98,7 +76,7 @@ nav .logo {
     align-items: center;
     gap: var(--spacing-sm);
     font-family: var(--font-accent);
-    font-size: 28px;
+    font-size: 28px
 }
 
 .hamburger-menu {
@@ -109,7 +87,7 @@ nav .logo {
     margin: var(--spacing-sm);
     cursor: pointer;
     background: none;
-    border: none;
+    border: none
 }
 
 .hamburger-menu .bar {
@@ -118,12 +96,12 @@ nav .logo {
     width: 25px;
     background-color: var(--color-text-primary);
     border-radius: var(--spacing-xs);
-    transition: all var(--transition-normal);
+    transition: all var(--transition-normal)
 }
 
 nav .logo .logo-text {
     display: inline-block;
-    transform: translateY(6px);
+    transform: translateY(6px)
 }
 
 nav .nav-links {
@@ -131,17 +109,17 @@ nav .nav-links {
     justify-content: center;
     gap: var(--spacing-xl);
     width: 100%;
-    font-family: var(--font-casual);
+    font-family: var(--font-casual)
 }
 
 nav .nav-links a {
     text-decoration: none;
     color: var(--color-text-primary);
-    transition: transform var(--transition-normal);
+    transition: transform var(--transition-normal)
 }
 
 nav .nav-links a:hover {
-    transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 nav .social {
@@ -150,57 +128,64 @@ nav .social {
     display: flex;
     font-size: 24px;
     gap: var(--spacing-md);
-    padding: var(--spacing-sm);
+    padding: var(--spacing-sm)
 }
 
 nav .social a {
     color: var(--color-text-primary);
-    text-decoration: none;
+    text-decoration: none
 }
 
 nav .social i:hover {
     transform: scale(1.3);
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: all var(--transition-normal)
 }
 
-/* ============================================
-   MAIN CONTENT
-   ============================================ */
 main {
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: hidden
 }
 
 main>section {
     position: relative;
     min-height: 100vh;
-    height: auto;
+    height: auto
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
-.hero-section {
-    position: absolute;
+.hero {
+    position: relative;
+    min-height: 500px;
+    height: 100vh
+}
+
+.hero-content {
+    position: relative;
     left: max(200px, 18vw);
+    max-width: max(50%, 500px);
     top: 50%;
     transform: translateY(-50%);
     padding: var(--spacing-md);
     font-family: var(--font-display);
     font-size: 24px;
-    z-index: 5;
+    z-index: 5
 }
 
-.hero-section p {
+.hero-content h2,
+.hero-content .hero-greeting {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.hero-content p {
     font-size: 64px;
     font-weight: 200;
-    margin-left: 50px;
+    margin-left: 50px
 }
 
 .dot {
-    color: var(--color-accent);
+    color: var(--color-accent)
 }
 
 .typing-effect {
@@ -210,26 +195,25 @@ main>section {
     white-space: nowrap;
     display: inline-block;
     position: relative;
-    padding-right: 0;
+    padding-right: 0
 }
 
 .cursor {
     color: var(--color-accent);
     font-size: 36px;
     animation: blink 0.7s infinite step-end;
-    z-index: 1;
+    z-index: 1
 }
 
 @keyframes blink {
     50% {
-        opacity: 0;
+        opacity: 0
     }
 }
 
-/* CTA Buttons */
-.hero-section .cta button,
-.hero-section .cta .resume-link,
-.hero-section .cta .btn-flip-link {
+.hero-content .cta button,
+.hero-content .cta .resume-link,
+.hero-content .cta .btn-flip-link {
     margin: 30px 5px;
     background-color: transparent;
     border: 0;
@@ -244,11 +228,11 @@ main>section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    text-decoration: none
 }
 
 .btn-flip-link {
-    padding: 0;
+    padding: 0
 }
 
 .btn-flip {
@@ -256,17 +240,17 @@ main>section {
     outline: 0;
     color: var(--color-text-primary);
     line-height: 50px;
-    text-align: center;
+    text-align: center
 }
 
 .btn-flip:hover:after {
     opacity: 1;
-    transform: translateY(0) rotateX(0);
+    transform: translateY(0) rotateX(0)
 }
 
 .btn-flip:hover:before {
     opacity: 0;
-    transform: translateY(50%) rotateX(90deg);
+    transform: translateY(50%) rotateX(90deg)
 }
 
 .btn-flip:after {
@@ -280,7 +264,7 @@ main>section {
     position: absolute;
     background: var(--color-accent-bright);
     content: attr(data-back);
-    transform: translateY(-50%) rotateX(90deg);
+    transform: translateY(-50%) rotateX(90deg)
 }
 
 .btn-flip:before {
@@ -294,54 +278,65 @@ main>section {
     position: relative;
     background: var(--color-accent);
     content: attr(data-front);
-    transform: translateY(0) rotateX(0);
+    transform: translateY(0) rotateX(0)
 }
 
-.hero-section .cta button.secondary {
-    background: transparent;
+.hero-content .cta button.secondary {
+    background: transparent
 }
 
-.hero-section .cta button.secondary svg {
+.hero-content .cta button.secondary svg {
     height: 50px;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
-    pointer-events: none;
+    pointer-events: none
 }
 
-.hero-section .cta button.secondary rect {
+.hero-content .cta button.secondary rect {
     fill: none;
     stroke: var(--color-accent);
     stroke-width: 4;
     stroke-dasharray: 422, 0;
-    transition: all 0.35s linear;
+    transition: all 0.35s linear
 }
 
-.hero-section .cta button.secondary:hover {
+.hero-content .cta button.secondary:hover {
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 1px
 }
 
-.hero-section .cta button.secondary:hover rect {
+.hero-content .cta button.secondary:hover rect {
     stroke-width: 7;
     stroke-dasharray: 15, 310;
     stroke-dashoffset: 48;
-    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1)
 }
 
-/* Hero Background Image */
+.hero-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none
+}
+
 .hero-image {
-    background: url('./assets/background.png');
+    background: url('../assets/background.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: calc(50% - 35px) center;
-    height: calc(100vh * 1.3);
-    width: max(25vw, 400px);
+    height: 130%;
+    width: 30vw;
+    max-width: 400px;
     position: absolute;
     right: 18vw;
     top: 0;
-    z-index: -1;
+    z-index: -1
 }
 
 .gradient-overlay {
@@ -351,17 +346,16 @@ main>section {
     right: 0;
     bottom: 0;
     z-index: 0;
-    pointer-events: none;
+    pointer-events: none
 }
 
-/* Skills Carousel */
 .hero .skills-carousel {
     position: absolute;
     font-family: var(--font-casual);
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, var(--color-bg-primary), rgba(4, 4, 4, 0.9), rgba(4, 4, 4, 0.8), rgba(4, 4, 4, 0.6), rgba(4, 4, 4, 0.4), transparent);
+    background: linear-gradient(to top, var(--color-bg-primary), rgba(4, 4, 4, 0.9), rgba(4, 4, 4, 0.8), rgba(4, 4, 4, 0.6), rgba(4, 4, 4, 0.4), transparent)
 }
 
 .carousel-ribbon {
@@ -369,30 +363,25 @@ main>section {
     color: rgb(150, 150, 150);
     padding: 1.2rem 0;
     width: 100%;
-    position: relative;
+    position: relative
 }
 
 .main-ribbon {
     transform: scale(1.1) rotate(-1deg);
-    z-index: 2;
+    z-index: 2
 }
 
 .reflection-ribbon {
     transform: scale(1.1) rotate(1deg);
     background-color: #070707;
     color: rgb(25, 25, 25);
-    z-index: 1;
+    z-index: 1
 }
 
 .carousel-track {
     display: flex;
     width: calc(200px * 12);
-    will-change: transform;
-}
-
-body.scrolling-up .track-forward,
-body.scrolling-up .track-reverse {
-    animation-direction: reverse;
+    will-change: transform
 }
 
 .carousel-item {
@@ -404,12 +393,9 @@ body.scrolling-up .track-reverse {
     justify-content: center;
     font-size: 16px;
     font-weight: 700;
-    white-space: nowrap;
+    white-space: nowrap
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
 #about {
     position: relative;
     min-height: 100vh;
@@ -418,10 +404,10 @@ body.scrolling-up .track-reverse {
     align-items: center;
     justify-content: center;
     padding: 60px var(--spacing-md);
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("./assets/dark-background.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../assets/dark-background.webp");
     background-size: cover;
     background-position: center;
-    overflow: hidden;
+    overflow: hidden
 }
 
 #about::after {
@@ -433,7 +419,7 @@ body.scrolling-up .track-reverse {
     height: 150px;
     background: linear-gradient(to bottom, transparent 0%, var(--color-bg-primary) 100%);
     pointer-events: none;
-    z-index: 1;
+    z-index: 1
 }
 
 .about-container {
@@ -441,11 +427,11 @@ body.scrolling-up .track-reverse {
     width: 100%;
     padding: var(--spacing-xl) var(--spacing-lg);
     position: relative;
-    z-index: 2;
+    z-index: 2
 }
 
 .about-header {
-    margin-bottom: 60px;
+    margin-bottom: 60px
 }
 
 .section-label {
@@ -457,7 +443,7 @@ body.scrolling-up .track-reverse {
     color: var(--color-text-muted);
     position: relative;
     padding-left: 60px;
-    display: inline-block;
+    display: inline-block
 }
 
 .section-label::before {
@@ -468,7 +454,7 @@ body.scrolling-up .track-reverse {
     transform: translateY(-50%);
     width: 45px;
     height: 4px;
-    background: var(--color-accent);
+    background: var(--color-accent)
 }
 
 .about-headline {
@@ -478,7 +464,7 @@ body.scrolling-up .track-reverse {
     line-height: 1.2;
     color: var(--color-text-primary);
     margin-bottom: var(--spacing-lg);
-    max-width: var(--container-max-width);
+    max-width: var(--container-max-width)
 }
 
 .about-description {
@@ -487,12 +473,9 @@ body.scrolling-up .track-reverse {
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.7);
     max-width: 900px;
-    font-weight: 300;
+    font-weight: 300
 }
 
-/* ============================================
-   SKILLS SECTION
-   ============================================ */
 #skills {
     position: relative;
     min-height: auto;
@@ -501,24 +484,24 @@ body.scrolling-up .track-reverse {
     align-items: center;
     justify-content: center;
     padding: 60px var(--spacing-md);
-    background: var(--color-bg-primary);
+    background: var(--color-bg-primary)
 }
 
 .skills-container {
     max-width: var(--container-max-width);
     width: 100%;
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg)
 }
 
 .skills-header {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl)
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: var(--spacing-lg);
-    max-width: 1100px;
+    max-width: 1100px
 }
 
 .skill-card {
@@ -531,12 +514,12 @@ body.scrolling-up .track-reverse {
     border-radius: 4px;
     box-shadow: 9px 9px 20px 0px #000;
     transition: all var(--transition-smooth);
-    cursor: default;
+    cursor: default
 }
 
 .skill-card:hover {
     background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-10px);
+    transform: translateY(-10px)
 }
 
 .skill-icon {
@@ -547,52 +530,51 @@ body.scrolling-up .track-reverse {
     justify-content: center;
     border-radius: var(--radius-md);
     font-size: 60px;
-    transition: all var(--transition-smooth);
+    transition: all var(--transition-smooth)
 }
 
 .skill-card:hover .skill-icon {
-    transform: scale(1.1);
+    transform: scale(1.1)
 }
 
-/* Technology-specific colors */
 .skill-icon.html {
-    color: #E34C26;
+    color: #E34C26
 }
 
 .skill-icon.css {
-    color: #2563EB;
+    color: #2563EB
 }
 
 .skill-icon.git {
-    color: #f05133;
+    color: #f05133
 }
 
 .skill-icon.javascript {
-    color: #F7DF1E;
+    color: #F7DF1E
 }
 
 .skill-icon.react {
-    color: #61DAFB;
+    color: #61DAFB
 }
 
 .skill-icon.github {
-    color: #FFFFFF;
+    color: #FFFFFF
 }
 
 .skill-icon.nodejs {
-    color: #68A063;
+    color: #68A063
 }
 
 .skill-icon.python {
-    color: #3776AB;
+    color: #3776AB
 }
 
 .skill-icon.mongodb {
-    color: #47A248;
+    color: #47A248
 }
 
 .skill-icon.docker {
-    color: #2196F3;
+    color: #2196F3
 }
 
 .skill-card h3 {
@@ -601,12 +583,9 @@ body.scrolling-up .track-reverse {
     font-weight: 600;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.9);
-    text-transform: uppercase;
+    text-transform: uppercase
 }
 
-/* ============================================
-   EDUCATION SECTION
-   ============================================ */
 #education {
     position: relative;
     min-height: auto;
@@ -615,22 +594,22 @@ body.scrolling-up .track-reverse {
     align-items: center;
     justify-content: center;
     padding: 60px var(--spacing-md);
-    background: var(--color-bg-primary);
+    background: var(--color-bg-primary)
 }
 
 .education-container {
     max-width: var(--container-max-width);
     width: 100%;
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg)
 }
 
 .education-header {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl)
 }
 
 .education-timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 900px
 }
 
 .education-item {
@@ -638,22 +617,22 @@ body.scrolling-up .track-reverse {
     grid-template-columns: 80px 1fr;
     gap: var(--spacing-lg);
     margin-bottom: 60px;
-    position: relative;
+    position: relative
 }
 
 .education-item:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0
 }
 
 .education-item:last-child .timeline-line {
-    display: none;
+    display: none
 }
 
 .timeline-connector {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    position: relative
 }
 
 .timeline-dot {
@@ -663,7 +642,7 @@ body.scrolling-up .track-reverse {
     border-radius: 50%;
     position: relative;
     z-index: 2;
-    box-shadow: 0 0 30px rgba(192, 68, 49, 0.6);
+    box-shadow: 0 0 30px rgba(192, 68, 49, 0.6)
 }
 
 .timeline-dot::after {
@@ -675,18 +654,15 @@ body.scrolling-up .track-reverse {
     border-radius: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
 }
 
 .timeline-line {
     width: 3px;
     flex: 1;
-    background: linear-gradient(to bottom,
-            rgba(192, 68, 49, 0.6) 0%,
-            rgba(192, 68, 49, 0.3) 50%,
-            rgba(192, 68, 49, 0.1) 100%);
+    background: linear-gradient(to bottom, rgba(192, 68, 49, 0.6) 0%, rgba(192, 68, 49, 0.3) 50%, rgba(192, 68, 49, 0.1) 100%);
     margin-top: var(--spacing-sm);
-    min-height: 120px;
+    min-height: 120px
 }
 
 .education-content {
@@ -697,7 +673,7 @@ body.scrolling-up .track-reverse {
     padding: 35px;
     transition: all var(--transition-smooth);
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .education-content::before {
@@ -707,14 +683,14 @@ body.scrolling-up .track-reverse {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--color-accent), transparent);
+    background: linear-gradient(to bottom, var(--color-accent), transparent)
 }
 
 .education-content:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(192, 68, 49, 0.4);
     transform: translateX(10px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-md)
 }
 
 .education-content h3 {
@@ -722,7 +698,7 @@ body.scrolling-up .track-reverse {
     font-size: 24px;
     font-weight: 700;
     color: var(--color-text-primary);
-    margin-bottom: 12px;
+    margin-bottom: 12px
 }
 
 .education-institution {
@@ -731,7 +707,7 @@ body.scrolling-up .track-reverse {
     color: var(--color-accent);
     font-weight: 600;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 10px
 }
 
 .education-year {
@@ -744,7 +720,7 @@ body.scrolling-up .track-reverse {
     background: rgba(192, 68, 49, 0.1);
     border-radius: var(--spacing-md);
     border: 1px solid rgba(192, 68, 49, 0.3);
-    margin-bottom: 5px;
+    margin-bottom: 5px
 }
 
 .education-description {
@@ -752,12 +728,9 @@ body.scrolling-up .track-reverse {
     font-size: 16px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.75);
-    margin-top: 5px;
+    margin-top: 5px
 }
 
-/* ============================================
-   EXPERIENCE SECTION
-   ============================================ */
 #experience {
     position: relative;
     height: auto;
@@ -765,7 +738,7 @@ body.scrolling-up .track-reverse {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 0;
+    padding: 60px 0
 }
 
 #experience .container {
@@ -774,24 +747,24 @@ body.scrolling-up .track-reverse {
     align-items: center;
     width: 70%;
     max-width: var(--container-max-width);
-    font-family: var(--font-display);
+    font-family: var(--font-display)
 }
 
 #experience .container h2 {
     font-size: 64px;
     font-weight: 700;
     margin-bottom: 60px;
-    text-align: center;
+    text-align: center
 }
 
 .experience-section-header {
     margin-bottom: var(--spacing-xl);
-    width: 100%;
+    width: 100%
 }
 
 .experience-timeline {
     width: 100%;
-    position: relative;
+    position: relative
 }
 
 .experience-card {
@@ -802,7 +775,7 @@ body.scrolling-up .track-reverse {
     padding: var(--spacing-lg);
     position: relative;
     overflow: hidden;
-    transition: all var(--transition-normal);
+    transition: all var(--transition-normal)
 }
 
 .experience-card::before {
@@ -812,14 +785,14 @@ body.scrolling-up .track-reverse {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--color-accent), transparent);
+    background: linear-gradient(to bottom, var(--color-accent), transparent)
 }
 
 .experience-card:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(192, 68, 49, 0.5);
     transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-md)
 }
 
 .experience-header {
@@ -827,27 +800,27 @@ body.scrolling-up .track-reverse {
     align-items: center;
     gap: var(--spacing-md);
     margin-bottom: 25px;
-    position: relative;
+    position: relative
 }
 
 .experience-title {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-xs)
 }
 
 .experience-title h3 {
     font-size: 28px;
     font-weight: 700;
     color: var(--color-text-primary);
-    margin: 0;
+    margin: 0
 }
 
 .experience-org {
     font-size: 18px;
     color: var(--color-accent);
-    font-weight: 500;
+    font-weight: 500
 }
 
 .experience-year {
@@ -857,31 +830,31 @@ body.scrolling-up .track-reverse {
     padding: 8px var(--spacing-md);
     background: rgba(192, 68, 49, 0.1);
     border-radius: 30px;
-    border: 1px solid rgba(192, 68, 49, 0.3);
+    border: 1px solid rgba(192, 68, 49, 0.3)
 }
 
 .experience-content {
-    margin-left: var(--spacing-lg);
+    margin-left: var(--spacing-lg)
 }
 
 .experience-description {
     font-size: 18px;
     line-height: 1.6;
     color: var(--color-text-secondary);
-    margin-bottom: 30px;
+    margin-bottom: 30px
 }
 
 .major-prs h4 {
     font-size: 20px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 15px;
+    margin-bottom: 15px
 }
 
 .pr-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 30px 0;
+    margin: 0 0 30px 0
 }
 
 .pr-item {
@@ -893,38 +866,38 @@ body.scrolling-up .track-reverse {
     border-radius: var(--spacing-sm);
     margin-bottom: 12px;
     transition: all var(--transition-normal);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05)
 }
 
 .pr-item:hover {
     background: rgba(192, 68, 49, 0.1);
     border-color: rgba(192, 68, 49, 0.3);
-    transform: translateX(10px);
+    transform: translateX(10px)
 }
 
 .pr-item i {
     font-size: 20px;
     color: #8957e5;
-    flex-shrink: 0;
+    flex-shrink: 0
 }
 
 .pr-item span:nth-child(2) {
     flex: 1;
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.85)
 }
 
 .pr-date {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.5);
-    font-weight: 500;
+    font-weight: 500
 }
 
 #experience .tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-md)
 }
 
 #experience .tech-tags span {
@@ -935,41 +908,37 @@ body.scrolling-up .track-reverse {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
     border: 1px solid rgba(192, 68, 49, 0.3);
-    transition: all var(--transition-normal);
+    transition: all var(--transition-normal)
 }
 
 #experience .tech-tags span:hover {
     background-color: rgba(192, 68, 49, 0.25);
     border-color: rgba(192, 68, 49, 0.5);
-    transform: translateY(-2px);
+    transform: translateY(-2px)
 }
 
-/* ============================================
-   PROJECTS SECTION
-   ============================================ */
 #projects {
     position: relative;
     height: auto;
     width: 90%;
     margin: 0 auto;
     padding: 100px 0;
-    font-family: var(--font-display);
+    font-family: var(--font-display)
 }
 
 #projects .container h2 {
     font-size: 64px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm)
 }
 
 #projects .container p {
     font-size: 20px;
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg)
 }
 
-/* Stacked Cards Layout */
 .card-stack-container {
     display: flex;
     justify-content: center;
@@ -977,13 +946,13 @@ body.scrolling-up .track-reverse {
     width: 100%;
     height: auto;
     position: relative;
-    overflow: visible;
+    overflow: visible
 }
 
 .card-stack {
     position: relative;
     width: 600px;
-    height: 400px;
+    height: 400px
 }
 
 .stack-card {
@@ -1007,7 +976,7 @@ body.scrolling-up .track-reverse {
     cursor: grab;
     user-select: none;
     will-change: transform;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .stack-card .card-header {
@@ -1016,37 +985,37 @@ body.scrolling-up .track-reverse {
     display: flex;
     justify-content: flex-start;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.02)
 }
 
 .window-dots {
     display: flex;
     gap: 8px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 10
 }
 
 .window-dots:hover span {
     transform: scale(1.1);
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast)
 }
 
 .window-dots span {
     width: 12px;
     height: 12px;
-    border-radius: 50%;
+    border-radius: 50%
 }
 
 .dot-red {
-    background-color: #ff5f56;
+    background-color: #ff5f56
 }
 
 .dot-yellow {
-    background-color: #ffbd2e;
+    background-color: #ffbd2e
 }
 
 .dot-green {
-    background-color: #27c93f;
+    background-color: #27c93f
 }
 
 .stack-card .card-content {
@@ -1056,20 +1025,20 @@ body.scrolling-up .track-reverse {
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    width: 100%;
+    width: 100%
 }
 
 .stack-card .card-content h3 {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: var(--spacing-xs);
-    color: var(--color-text-primary);
+    color: var(--color-text-primary)
 }
 
 .tech-tags {
     display: flex;
     gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md)
 }
 
 .tech-tags span {
@@ -1078,7 +1047,7 @@ body.scrolling-up .track-reverse {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: var(--spacing-md);
     color: var(--color-text-secondary);
-    font-weight: 500;
+    font-weight: 500
 }
 
 .stack-card .card-content p {
@@ -1086,7 +1055,7 @@ body.scrolling-up .track-reverse {
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 30px;
     line-height: 1.6;
-    max-width: 90%;
+    max-width: 90%
 }
 
 .github-btn {
@@ -1104,27 +1073,24 @@ body.scrolling-up .track-reverse {
     transition: all var(--transition-normal);
     opacity: 0;
     transform: translateY(20px);
-    pointer-events: none;
+    pointer-events: none
 }
 
 .stack-card:hover .github-btn {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto;
+    pointer-events: auto
 }
 
 .github-btn:hover {
     box-shadow: var(--shadow-glow);
-    transform: translateY(-2px);
+    transform: translateY(-2px)
 }
 
 .stack-card:nth-child(n) {
-    z-index: 1;
+    z-index: 1
 }
 
-/* ============================================
-   CERTIFICATIONS SECTION
-   ============================================ */
 #certifications {
     position: relative;
     min-height: auto;
@@ -1133,23 +1099,23 @@ body.scrolling-up .track-reverse {
     align-items: center;
     justify-content: center;
     padding: 60px var(--spacing-md);
-    background: linear-gradient(180deg, var(--color-bg-primary) 0%, #0a0505 100%);
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, #0a0505 100%)
 }
 
 .certifications-container {
     max-width: var(--container-max-width);
     width: 100%;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg)
 }
 
 .certifications-header {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl)
 }
 
 .certifications-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 30px
 }
 
 .certification-card {
@@ -1164,7 +1130,7 @@ body.scrolling-up .track-reverse {
     text-align: center;
     transition: all var(--transition-smooth);
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .certification-card::before {
@@ -1176,18 +1142,18 @@ body.scrolling-up .track-reverse {
     height: 200%;
     background: radial-gradient(circle, rgba(192, 68, 49, 0.1) 0%, transparent 70%);
     opacity: 0;
-    transition: opacity var(--transition-smooth);
+    transition: opacity var(--transition-smooth)
 }
 
 .certification-card:hover::before {
-    opacity: 1;
+    opacity: 1
 }
 
 .certification-card:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(192, 68, 49, 0.4);
     transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg)
 }
 
 .cert-icon {
@@ -1202,14 +1168,14 @@ body.scrolling-up .track-reverse {
     font-size: 40px;
     color: var(--color-accent);
     margin-bottom: 25px;
-    transition: all var(--transition-smooth);
+    transition: all var(--transition-smooth)
 }
 
 .certification-card:hover .cert-icon {
     transform: scale(1.1) rotate(5deg);
     background: rgba(192, 68, 49, 0.25);
     border-color: rgba(192, 68, 49, 0.5);
-    box-shadow: 0 0 30px rgba(192, 68, 49, 0.4);
+    box-shadow: 0 0 30px rgba(192, 68, 49, 0.4)
 }
 
 .certification-card h3 {
@@ -1217,14 +1183,14 @@ body.scrolling-up .track-reverse {
     font-size: 20px;
     font-weight: 700;
     color: var(--color-text-primary);
-    margin-bottom: 12px;
+    margin-bottom: 12px
 }
 
 .cert-issuer {
     font-family: var(--font-display);
     font-size: 15px;
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 15px;
+    margin-bottom: 15px
 }
 
 .cert-year {
@@ -1235,12 +1201,9 @@ body.scrolling-up .track-reverse {
     padding: 6px 18px;
     background: rgba(192, 68, 49, 0.1);
     border-radius: var(--spacing-md);
-    border: 1px solid rgba(192, 68, 49, 0.3);
+    border: 1px solid rgba(192, 68, 49, 0.3)
 }
 
-/* ============================================
-   CONTACT SECTION
-   ============================================ */
 #contact {
     position: relative;
     min-height: auto;
@@ -1249,7 +1212,7 @@ body.scrolling-up .track-reverse {
     align-items: center;
     justify-content: center;
     padding: 100px var(--spacing-md) 60px;
-    background: linear-gradient(180deg, #0a0505 0%, var(--color-bg-primary) 100%);
+    background: linear-gradient(180deg, #0a0505 0%, var(--color-bg-primary) 100%)
 }
 
 .contact-container {
@@ -1257,7 +1220,7 @@ body.scrolling-up .track-reverse {
     width: 100%;
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 2
 }
 
 .cta-headline {
@@ -1271,18 +1234,18 @@ body.scrolling-up .track-reverse {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     background-size: 200% 100%;
-    animation: gradient-shift 5s ease infinite;
+    animation: gradient-shift 5s ease infinite
 }
 
 @keyframes gradient-shift {
 
     0%,
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 50%
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position: 100% 50%
     }
 }
 
@@ -1291,7 +1254,7 @@ body.scrolling-up .track-reverse {
     font-size: clamp(16px, 2vw, 20px);
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 50px;
-    line-height: 1.6;
+    line-height: 1.6
 }
 
 .cta-buttons {
@@ -1299,7 +1262,7 @@ body.scrolling-up .track-reverse {
     align-items: center;
     justify-content: center;
     gap: 25px;
-    flex-wrap: wrap;
+    flex-wrap: wrap
 }
 
 .cta-email-btn {
@@ -1318,7 +1281,7 @@ body.scrolling-up .track-reverse {
     transition: all var(--transition-smooth);
     box-shadow: 0 10px 40px rgba(192, 68, 49, 0.3);
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .cta-email-btn::before {
@@ -1329,25 +1292,25 @@ body.scrolling-up .track-reverse {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
+    transition: left 0.5s ease
 }
 
 .cta-email-btn:hover::before {
-    left: 100%;
+    left: 100%
 }
 
 .cta-email-btn:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 50px rgba(192, 68, 49, 0.5);
+    box-shadow: 0 15px 50px rgba(192, 68, 49, 0.5)
 }
 
 .cta-email-btn i {
-    font-size: 20px;
+    font-size: 20px
 }
 
 .cta-social-links {
     display: flex;
-    gap: 15px;
+    gap: 15px
 }
 
 .social-btn {
@@ -1363,24 +1326,23 @@ body.scrolling-up .track-reverse {
     font-size: 24px;
     color: var(--color-accent);
     text-decoration: none;
-    transition: all var(--transition-smooth);
+    transition: all var(--transition-smooth)
 }
 
 .social-btn:hover {
     background: rgba(192, 68, 49, 0.2);
     border-color: var(--color-accent);
     transform: translateY(-5px) rotate(5deg);
-    box-shadow: 0 10px 30px rgba(192, 68, 49, 0.4);
+    box-shadow: 0 10px 30px rgba(192, 68, 49, 0.4)
 }
 
-/* Decorative Floating Orbs */
 .cta-orb {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.5;
     pointer-events: none;
-    animation: float 8s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite
 }
 
 .cta-orb-1 {
@@ -1389,7 +1351,7 @@ body.scrolling-up .track-reverse {
     background: radial-gradient(circle, rgba(192, 68, 49, 0.4) 0%, transparent 70%);
     top: -100px;
     right: -100px;
-    animation-delay: 0s;
+    animation-delay: 0s
 }
 
 .cta-orb-2 {
@@ -1398,7 +1360,7 @@ body.scrolling-up .track-reverse {
     background: radial-gradient(circle, rgba(255, 107, 74, 0.3) 0%, transparent 70%);
     bottom: -80px;
     left: -80px;
-    animation-delay: 2s;
+    animation-delay: 2s
 }
 
 .cta-orb-3 {
@@ -1408,26 +1370,25 @@ body.scrolling-up .track-reverse {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation-delay: 4s;
+    animation-delay: 4s
 }
 
 @keyframes float {
 
     0%,
     100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0)
     }
 
     33% {
-        transform: translate(30px, -30px);
+        transform: translate(30px, -30px)
     }
 
     66% {
-        transform: translate(-25px, 25px);
+        transform: translate(-25px, 25px)
     }
 }
 
-/* Back to Top in Contact Section */
 #contact .back-to-top {
     width: 64px;
     height: 64px;
@@ -1445,16 +1406,16 @@ body.scrolling-up .track-reverse {
     position: absolute;
     bottom: 195px;
     right: 50px;
+    z-index: 10
 }
 
 #contact .back-to-top:hover {
     background: var(--color-text-primary);
     color: var(--color-bg-primary);
     transform: translateY(-5px) scale(1.1);
-    border-color: var(--color-text-primary);
+    border-color: var(--color-text-primary)
 }
 
-/* Copyright in Contact Section */
 #contact .copyright {
     width: 100%;
     text-align: center;
@@ -1462,12 +1423,9 @@ body.scrolling-up .track-reverse {
     padding-top: 60px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--color-text-dim);
-    font-size: 0.9rem;
+    font-size: 0.9rem
 }
 
-/* ============================================
-   CUSTOM CURSOR
-   ============================================ */
 .cursor-dot {
     width: 8px;
     height: 8px;
@@ -1479,27 +1437,21 @@ body.scrolling-up .track-reverse {
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    transition: opacity var(--transition-fast), transform var(--transition-fast)
 }
 
 .cursor-dot.hidden {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0)
 }
 
-/* ============================================
-   RESPONSIVE MEDIA QUERIES
-   ============================================ */
-
-/* Tablet & Mobile (1024px and below) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width:1024px) {
     .hamburger-menu {
         display: flex;
         z-index: 100;
-        position: relative;
+        position: relative
     }
 
-    /* Mobile Menu Overlay */
     nav .nav-links {
         position: fixed;
         right: 0;
@@ -1514,11 +1466,11 @@ body.scrolling-up .track-reverse {
         gap: 60px;
         transform: translateY(-100%);
         transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 9;
+        z-index: 9
     }
 
     nav .nav-links.nav-active {
-        transform: translateY(0);
+        transform: translateY(0)
     }
 
     nav .nav-links a {
@@ -1527,598 +1479,569 @@ body.scrolling-up .track-reverse {
         transition: all 0.5s ease;
         font-size: 32px;
         font-weight: 600;
-        letter-spacing: 2px;
+        letter-spacing: 2px
     }
 
     nav .nav-links.nav-active a {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0)
     }
 
     nav .nav-links a:hover {
-        color: var(--color-accent);
+        color: var(--color-accent)
     }
 
-    /* Hamburger Animation */
     .hamburger-menu.toggle .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
+        transform: rotate(-45deg) translate(-5px, 6px)
     }
 
     .hamburger-menu.toggle .bar:nth-child(2) {
-        opacity: 0;
+        opacity: 0
     }
 
     .hamburger-menu.toggle .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
+        transform: rotate(45deg) translate(-5px, -6px)
     }
 
-    .hero-section {
-        top: 50%;
-        transform: translateY(-50%);
+    .hero-content {
+        left: 10vw
     }
 
     #experience .container {
-        width: 85%;
+        width: 85%
     }
 
     #experience .container h2 {
         font-size: 48px;
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg)
     }
 
     .experience-card {
-        padding: 30px;
+        padding: 30px
     }
 
     .experience-title h3 {
-        font-size: 24px;
+        font-size: 24px
     }
 
     .experience-description {
-        font-size: 16px;
+        font-size: 16px
     }
 
     .certifications-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr)
     }
 
-    /* Hide custom cursor on tablet/touch devices */
     .cursor-dot {
-        display: none;
+        display: none
     }
 }
 
-/* Mobile Landscape & Small Tablets (768px and below) */
-@media screen and (max-width: 768px) {
-
-    /* Header adjustments */
+@media screen and (max-width:768px) {
     nav .logo {
-        font-size: 24px;
+        font-size: 24px
+    }
+
+    nav .logo .logo-text {
+        display: none
     }
 
     nav .social {
         right: 15px;
         font-size: 20px;
-        gap: 15px;
+        gap: 15px
     }
 
-    /* Hero section */
-    .hero-section {
-        left: 15%;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 20px;
+    .hero-content {
+        font-size: 20px
     }
 
-    .hero-section p {
+    .hero-content p {
         font-size: 48px;
-        margin-left: 30px;
+        margin-left: 30px
     }
 
     .typing-effect,
     .cursor {
-        font-size: 28px;
+        font-size: 28px
     }
 
     .hero-image {
         width: 270px;
-        right: 10vw;
+        right: 10vw
     }
 
-    /* About & Skills sections */
     .about-container,
     .skills-container,
     .education-container {
-        padding: 0px 10px;
+        padding: 0px 10px
     }
 
     .certifications-container {
-        padding: 0 10px;
+        padding: 0 10px
     }
 
     .section-label {
         padding-left: var(--spacing-lg);
-        font-size: 12px;
+        font-size: 12px
     }
 
     .section-label::before {
         width: 30px;
-        height: 2px;
+        height: 2px
     }
 
     .about-headline {
         margin-bottom: 30px;
-        font-size: clamp(36px, 5vw, 60px);
+        font-size: clamp(36px, 5vw, 60px)
     }
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 20px
     }
 
     .skill-card {
-        padding: 20px 15px;
+        padding: 20px 15px
     }
 
     .skill-icon {
         width: 70px;
         height: 70px;
-        font-size: 42px;
+        font-size: 42px
     }
 
     .skill-card h3 {
-        font-size: 13px;
+        font-size: 15px
     }
 
-    /* Education */
     .education-item {
         grid-template-columns: 50px 1fr;
         gap: var(--spacing-md);
-        margin-bottom: 50px;
+        margin-bottom: 50px
     }
 
     .timeline-dot {
         width: 18px;
-        height: 18px;
+        height: 18px
     }
 
     .timeline-dot::after {
         width: 10px;
-        height: 10px;
+        height: 10px
     }
 
     .timeline-line {
         width: 2px;
-        min-height: 100px;
+        min-height: 100px
     }
 
     .education-content {
-        padding: 25px;
+        padding: 25px
     }
 
     .education-content h3 {
-        font-size: 20px;
+        font-size: 20px
     }
 
     .education-institution {
-        font-size: 16px;
+        font-size: 16px
     }
 
-    /* Certifications */
     .certifications-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 20px
     }
 
     .certification-card {
-        padding: 25px 15px;
+        padding: 25px 15px
     }
 
     .cert-icon {
         width: 70px;
         height: 70px;
         font-size: 32px;
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .certification-card h3 {
         font-size: 16px;
-        margin-bottom: 8px;
+        margin-bottom: 8px
     }
 
     .cert-issuer {
         font-size: 13px;
-        margin-bottom: 10px;
+        margin-bottom: 10px
     }
 
     .cert-year {
         font-size: 11px;
-        padding: 4px 12px;
+        padding: 4px 12px
     }
 
-    /* Experience */
     #experience {
-        padding: 60px 30px;
+        padding: 60px 30px
     }
 
     #experience .container {
-        width: 100%;
+        width: 100%
     }
 
     #experience .container h2 {
         font-size: 36px;
-        margin-bottom: 30px;
+        margin-bottom: 30px
     }
 
     .experience-card {
-        padding: 25px;
+        padding: 25px
     }
 
     .experience-header {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 15px
     }
 
     .experience-year {
         width: 100%;
         text-align: center;
-        margin-left: var(--spacing-lg);
+        margin-left: var(--spacing-lg)
     }
 
     .experience-content {
-        margin-left: 0;
+        margin-left: 0
     }
 
     .experience-title h3 {
-        font-size: 22px;
+        font-size: 22px
     }
 
     .experience-org {
-        font-size: 16px;
+        font-size: 16px
     }
 
     .pr-item {
         flex-wrap: wrap;
-        gap: var(--spacing-sm);
+        gap: var(--spacing-sm)
     }
 
     .pr-item span:nth-child(2) {
         width: 100%;
-        font-size: 15px;
+        font-size: 15px
     }
 
     .pr-date {
-        margin-left: 35px;
+        margin-left: 35px
     }
 
-    /* Projects */
     #projects {
         width: 100%;
-        padding: 60px 30px;
+        padding: 60px 30px
     }
 
     #projects .container h2 {
         font-size: 48px;
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     #projects .container p {
         font-size: 18px;
-        margin-bottom: 60px;
+        margin-bottom: 60px
     }
 
     .card-stack-container {
-        padding: 0 10px;
+        padding: 0 10px
     }
 
     .card-stack {
         width: 100%;
         max-width: 500px;
         height: auto;
-        min-height: 380px;
+        min-height: 380px
     }
 
     .stack-card {
-        min-height: 380px;
+        min-height: 380px
     }
 
     .stack-card .card-content {
-        padding: 25px;
+        padding: 25px
     }
 
     .stack-card .card-content h3 {
         font-size: 26px;
-        margin-bottom: 10px;
+        margin-bottom: 10px
     }
 
     .tech-tags {
         flex-wrap: wrap;
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .tech-tags span {
         font-size: 11px;
-        padding: 4px 8px;
+        padding: 4px 8px
     }
 
     .stack-card .card-content p {
         font-size: 16px;
         margin-bottom: 20px;
-        max-width: 100%;
+        max-width: 100%
     }
 
-    /* Always show button on mobile (no hover) */
     .github-btn {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
         padding: 10px 25px;
-        font-size: 14px;
+        font-size: 14px
     }
 
-    /* Contact Section */
     #contact {
         padding: 60px 30px;
-        min-height: auto;
+        min-height: auto
     }
 
     .cta-subtext {
-        margin-bottom: 30px;
+        margin-bottom: 30px
     }
 
     .cta-buttons {
         flex-direction: column;
-        gap: var(--spacing-md);
+        gap: var(--spacing-md)
     }
 
     .cta-email-btn {
         width: 100%;
         max-width: 300px;
-        justify-content: center;
+        justify-content: center
     }
 
     .cta-orb-1,
     .cta-orb-2 {
         width: 250px;
-        height: 250px;
+        height: 250px
     }
 
     .cta-orb-3 {
         width: 180px;
-        height: 180px;
+        height: 180px
     }
 }
 
-/* Mobile Portrait (480px and below) */
-@media screen and (max-width: 480px) {
-
-    /* Header */
+@media screen and (max-width:480px) {
     header {
         height: 50px;
         padding: var(--spacing-xs);
-        margin: var(--spacing-xs);
+        margin: var(--spacing-xs)
     }
 
     nav {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-sm)
     }
 
     nav .logo {
         font-size: 20px;
-        gap: var(--spacing-xs);
+        gap: var(--spacing-xs)
     }
 
     nav .logo .logo-text {
-        transform: translateY(4px);
+        transform: translateY(4px)
     }
 
     nav .social {
         right: var(--spacing-sm);
         font-size: 18px;
         gap: 15px;
-        padding: var(--spacing-xs);
+        padding: var(--spacing-xs)
     }
 
-    /* Hero section */
-    .hero-section {
+    .hero-content {
         left: var(--spacing-md);
-        top: 60%;
-        transform: translateY(-50%);
         padding: 15px;
         font-size: 18px;
         width: calc(100% - 40px);
-        max-width: 90%;
-        position: absolute;
-        background: rgba(4, 4, 4, 0.1);
-        backdrop-filter: blur(1px);
-        border-radius: 0;
+        max-width: 90%
     }
 
-    .hero-section h2 {
-        font-size: 20px;
+    .hero-content h2,
+    .hero-content .hero-greeting {
+        font-size: 18px
     }
 
-    .hero-section p {
+    .hero-content p {
         font-size: 32px;
         font-weight: 300;
-        margin-left: var(--spacing-md);
+        margin-left: var(--spacing-md)
     }
 
     .typing-effect {
         font-size: 24px;
         white-space: normal;
-        word-wrap: break-word;
+        word-wrap: break-word
     }
 
     .cursor {
-        font-size: 24px;
+        font-size: 24px
     }
 
-    /* CTA buttons */
-    .hero-section .cta {
+    .hero-content .cta {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-sm);
-        margin-top: var(--spacing-md);
+        margin-top: var(--spacing-md)
     }
 
-    .hero-section .cta button,
-    .hero-section .cta .resume-link,
-    .hero-section .cta .btn-flip-link {
+    .hero-content .cta button,
+    .hero-content .cta .resume-link,
+    .hero-content .cta .btn-flip-link {
         width: 100%;
         max-width: 280px;
         height: 45px;
         font-size: 13px;
-        margin: var(--spacing-xs) 0;
+        margin: var(--spacing-xs) 0
     }
 
     .btn-flip-link button {
         width: 100%;
-        margin: 0;
+        margin: 0
     }
 
-    /* Hero image - full screen on mobile */
     .hero-image {
-        background: url('./assets/background.png');
+        background: url('./assets/background.webp');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         position: absolute;
         height: 100vh;
         width: 100vw;
+        max-width: 100%;
         left: 0;
         right: 0;
         top: 0;
-        z-index: -1;
+        z-index: -1
     }
 
-    /* Gradient overlay for fade effect */
     .gradient-overlay {
         display: block;
-        position: absolute;
         bottom: 0;
-        top: 60%;
-        height: 40%;
-        background: linear-gradient(to bottom, transparent 0%, rgba(4, 4, 4, 0.8) 30%, rgba(4, 4, 4, 0.85) 50%, rgba(4, 4, 4, 0.95) 70%, rgba(4, 4, 4, 1) 100%);
+        top: 25vh;
+        background: linear-gradient(to bottom, transparent 0%, rgba(4, 4, 4, 0.8) 30%, rgba(4, 4, 4, 0.85) 50%, rgba(4, 4, 4, 0.95) 70%, rgba(4, 4, 4, 1) 100%)
     }
 
-    /* Experience */
     #experience .container h2 {
-        font-size: 32px;
+        font-size: 32px
     }
 
     .experience-card {
-        padding: var(--spacing-md);
+        padding: var(--spacing-md)
     }
 
     .experience-card::before {
-        width: 2px;
+        width: 2px
     }
 
     .timeline-dot {
         width: 16px;
-        height: 16px;
+        height: 16px
     }
 
     .timeline-dot::after {
         width: 10px;
-        height: 10px;
+        height: 10px
     }
 
     .experience-title h3 {
-        font-size: 20px;
+        font-size: 20px
     }
 
     .experience-year {
         font-size: 16px;
-        padding: 6px 15px;
+        padding: 6px 15px
     }
 
     .experience-description {
-        font-size: 15px;
+        font-size: 15px
     }
 
     .major-prs h4 {
-        font-size: 18px;
+        font-size: 18px
     }
 
     .pr-item {
-        padding: 12px 15px;
+        padding: 12px 15px
     }
 
     #experience .tech-tags span {
         font-size: 12px;
-        padding: 6px 12px;
+        padding: 6px 12px
     }
 
-    /* Projects Mobile Portrait */
     #projects .container h2 {
         font-size: 36px;
-        margin-bottom: 10px;
+        margin-bottom: 10px
     }
 
     #projects .container p {
         font-size: 16px;
-        padding: 0 10px;
+        padding: 0 10px
     }
 
     .card-stack-container {
-        padding: 0 5px;
+        padding: 0 5px
     }
 
     .card-stack {
         width: 100%;
         max-width: 100%;
         height: auto;
-        min-height: 420px;
+        min-height: 420px
     }
 
     .stack-card {
-        min-height: 420px;
+        min-height: 420px
     }
 
     .stack-card .card-header {
-        padding: 12px 15px;
+        padding: 12px 15px
     }
 
     .window-dots span {
         width: 10px;
-        height: 10px;
+        height: 10px
     }
 
     .stack-card .card-content {
-        padding: 20px 15px;
+        padding: 20px 15px
     }
 
     .stack-card .card-content h3 {
         font-size: 22px;
-        margin-bottom: 8px;
+        margin-bottom: 8px
     }
 
     .tech-tags {
         gap: 6px;
-        margin-bottom: 12px;
+        margin-bottom: 12px
     }
 
     .tech-tags span {
         font-size: 10px;
-        padding: 4px 8px;
+        padding: 4px 8px
     }
 
     .stack-card .card-content p {
         font-size: 14px;
         line-height: 1.5;
-        margin-bottom: 15px;
+        margin-bottom: 15px
     }
 
     .github-btn {
         padding: 10px 20px;
         font-size: 13px;
-        gap: 8px;
+        gap: 8px
     }
 
     #contact .back-to-top {
-        display: none;
+        display: none
     }
 }
