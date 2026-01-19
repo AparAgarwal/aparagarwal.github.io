@@ -22,6 +22,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const pdfUrl = urlParams.get("file") || "../assets/resume.pdf";
       const container = document.getElementById("pdf-container");
+      const pixelRatio = window.devicePixelRatio || 1;
       pdfjsLib.getDocument(pdfUrl).promise.then((pdf) => {
         const numPages = pdf.numPages;
         for (let pageNum = 1; pageNum <= numPages; pageNum++) {
@@ -35,10 +36,18 @@
             pageContainer.className = "page-container";
             const canvas = document.createElement("canvas");
             const context = canvas.getContext("2d");
-            canvas.height = viewport.height;
-            canvas.width = viewport.width;
+
+            // Render at higher resolution for crisp display on HiDPI screens
+            canvas.width = viewport.width * pixelRatio;
+            canvas.height = viewport.height * pixelRatio;
+            canvas.style.width = viewport.width + "px";
+            canvas.style.height = viewport.height + "px";
             canvas.style.maxWidth = "100%";
             canvas.style.height = "auto";
+            
+            // Scale the context to match the higher resolution
+            context.scale(pixelRatio, pixelRatio);
+
             pageContainer.appendChild(canvas);
             container.appendChild(pageContainer);
             page.render({ canvasContext: context, viewport: viewport });
