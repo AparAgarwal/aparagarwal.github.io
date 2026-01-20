@@ -161,19 +161,31 @@ main {
 }
 
 main>section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    min-height: 100vh;
-    height: auto
+    padding: 60px var(--spacing-md);
+}
+
+.section-container {
+    max-width: var(--container-max-width);
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-lg)
+}
+
+.section-header {
+    margin-bottom: var(--spacing-xl);
 }
 
 .hero {
     position: relative;
-    min-height: 500px;
+    min-height: 700px;
     height: 100vh
 }
 
 .hero-content {
-    position: relative;
+    position: absolute;
     left: max(200px, 18vw);
     max-width: max(50%, 500px);
     top: 50%;
@@ -410,13 +422,8 @@ main>section {
 }
 
 #about {
-    position: relative;
-    min-height: 100vh;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px var(--spacing-md);
+    height: 100vh;
+    min-height: fit-content;
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../assets/dark-background.webp");
     background-size: cover;
     background-position: center;
@@ -433,18 +440,6 @@ main>section {
     background: linear-gradient(to bottom, transparent 0%, var(--color-bg-primary) 100%);
     pointer-events: none;
     z-index: 1
-}
-
-.about-container {
-    max-width: var(--container-max-width);
-    width: 100%;
-    padding: var(--spacing-xl) var(--spacing-lg);
-    position: relative;
-    z-index: 2
-}
-
-.about-header {
-    margin-bottom: 60px
 }
 
 .section-label {
@@ -489,32 +484,10 @@ main>section {
     font-weight: 300
 }
 
-#skills {
-    position: relative;
-    min-height: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px var(--spacing-md);
-    background: var(--color-bg-primary)
-}
-
-.skills-container {
-    max-width: var(--container-max-width);
-    width: 100%;
-    padding: var(--spacing-xl) var(--spacing-lg)
-}
-
-.skills-header {
-    margin-bottom: var(--spacing-xl)
-}
-
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: var(--spacing-lg);
-    max-width: 1100px
 }
 
 .skill-card {
@@ -597,27 +570,6 @@ main>section {
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase
-}
-
-#education {
-    position: relative;
-    min-height: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px var(--spacing-md);
-    background: var(--color-bg-primary)
-}
-
-.education-container {
-    max-width: var(--container-max-width);
-    width: 100%;
-    padding: var(--spacing-xl) var(--spacing-lg)
-}
-
-.education-header {
-    margin-bottom: var(--spacing-xl)
 }
 
 .education-timeline {
@@ -744,37 +696,6 @@ main>section {
     margin-top: 5px
 }
 
-#experience {
-    position: relative;
-    height: auto;
-    min-height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 0
-}
-
-#experience .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%;
-    max-width: var(--container-max-width);
-    font-family: var(--font-display)
-}
-
-#experience .container h2 {
-    font-size: 64px;
-    font-weight: 700;
-    margin-bottom: 60px;
-    text-align: center
-}
-
-.experience-section-header {
-    margin-bottom: var(--spacing-xl);
-    width: 100%
-}
-
 .experience-timeline {
     width: 100%;
     position: relative
@@ -808,7 +729,7 @@ main>section {
     box-shadow: var(--shadow-md)
 }
 
-.experience-header {
+.experience-content-header {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
@@ -930,36 +851,10 @@ main>section {
     transform: translateY(-2px)
 }
 
-#projects {
-    position: relative;
-    height: auto;
-    width: 90%;
-    margin: 0 auto;
-    padding: 100px 0;
-    font-family: var(--font-display)
-}
-
-#projects .container h2 {
-    font-size: 64px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: var(--spacing-sm)
-}
-
-#projects .container p {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: var(--spacing-lg)
-}
-
 .card-stack-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: auto;
-    position: relative;
-    overflow: visible
 }
 
 .card-stack {
@@ -1105,24 +1000,7 @@ main>section {
 }
 
 #certifications {
-    position: relative;
-    min-height: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px var(--spacing-md);
     background: linear-gradient(180deg, var(--color-bg-primary) 0%, #0a0505 100%)
-}
-
-.certifications-container {
-    max-width: var(--container-max-width);
-    width: 100%;
-    padding: var(--spacing-lg)
-}
-
-.certifications-header {
-    margin-bottom: var(--spacing-xl)
 }
 
 .certifications-grid {
@@ -1218,21 +1096,14 @@ main>section {
 }
 
 #contact {
-    position: relative;
-    min-height: auto;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 100px var(--spacing-md) 60px;
     background: linear-gradient(180deg, #0a0505 0%, var(--color-bg-primary) 100%)
 }
 
 .contact-container {
-    max-width: 900px;
-    width: 100%;
     text-align: center;
     position: relative;
+    padding-bottom: 40px;
     z-index: 2
 }
 
@@ -1410,14 +1281,11 @@ main>section {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     color: var(--color-text-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: all var(--transition-normal);
     font-size: 24px;
     position: absolute;
-    bottom: 195px;
+    bottom: 100px;
     right: 50px;
     z-index: 10
 }
@@ -1429,11 +1297,10 @@ main>section {
     border-color: var(--color-text-primary)
 }
 
-#contact .copyright {
+.copyright {
     width: 100%;
     text-align: center;
-    margin-top: 60px;
-    padding-top: 60px;
+    padding: 30px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--color-text-dim);
     font-size: 0.9rem
@@ -1520,15 +1387,6 @@ main>section {
         left: 10vw
     }
 
-    #experience .container {
-        width: 85%
-    }
-
-    #experience .container h2 {
-        font-size: 48px;
-        margin-bottom: var(--spacing-lg)
-    }
-
     .experience-card {
         padding: 30px
     }
@@ -1584,14 +1442,8 @@ main>section {
         right: 10vw
     }
 
-    .about-container,
-    .skills-container,
-    .education-container {
+    .section-container {
         padding: 0px 10px
-    }
-
-    .certifications-container {
-        padding: 0 10px
     }
 
     .section-label {
@@ -1691,24 +1543,11 @@ main>section {
         padding: 4px 12px
     }
 
-    #experience {
-        padding: 60px 30px
-    }
-
-    #experience .container {
-        width: 100%
-    }
-
-    #experience .container h2 {
-        font-size: 36px;
-        margin-bottom: 30px
-    }
-
     .experience-card {
         padding: 25px
     }
 
-    .experience-header {
+    .experience-content-header {
         flex-wrap: wrap;
         gap: 15px
     }
@@ -1743,21 +1582,6 @@ main>section {
 
     .pr-date {
         margin-left: 35px
-    }
-
-    #projects {
-        width: 100%;
-        padding: 60px 30px
-    }
-
-    #projects .container h2 {
-        font-size: 48px;
-        margin-bottom: 15px
-    }
-
-    #projects .container p {
-        font-size: 18px;
-        margin-bottom: 60px
     }
 
     .card-stack-container {
@@ -1808,11 +1632,6 @@ main>section {
         font-size: 14px
     }
 
-    #contact {
-        padding: 60px 30px;
-        min-height: auto
-    }
-
     .cta-subtext {
         margin-bottom: 30px
     }
@@ -1838,13 +1657,16 @@ main>section {
         width: 180px;
         height: 180px
     }
+
+    #contact .back-to-top {
+        display: none
+    }
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:480px) and (orientation: portrait) {
     header {
         height: 50px;
         padding: var(--spacing-xs);
-        margin: var(--spacing-xs)
     }
 
     nav {
@@ -1853,11 +1675,6 @@ main>section {
 
     nav .logo {
         font-size: 20px;
-        gap: var(--spacing-xs)
-    }
-
-    nav .logo .logo-text {
-        transform: translateY(4px)
     }
 
     nav .social {
@@ -1869,6 +1686,7 @@ main>section {
 
     .hero-content {
         left: var(--spacing-md);
+        top: 60%;
         padding: 15px;
         font-size: 18px;
         width: calc(100% - 40px);
@@ -1877,12 +1695,12 @@ main>section {
 
     .hero-content h2,
     .hero-content .hero-greeting {
-        font-size: 18px
+        font-size: 18px;
+        font-weight: 300;
     }
 
     .hero-content p {
         font-size: 32px;
-        font-weight: 300;
         margin-left: var(--spacing-md)
     }
 
@@ -1920,18 +1738,11 @@ main>section {
     }
 
     .hero-image {
-        background: url('../assets/background.webp');
-        background-size: cover;
-        background-repeat: no-repeat;
         background-position: center center;
-        position: absolute;
-        height: 100vh;
         width: 100vw;
         max-width: 100%;
         left: 0;
-        right: 0;
-        top: 0;
-        z-index: -1
+        right: 0
     }
 
     .gradient-overlay {
@@ -1941,8 +1752,13 @@ main>section {
         background: linear-gradient(to bottom, transparent 0%, rgba(4, 4, 4, 0.8) 30%, rgba(4, 4, 4, 0.85) 50%, rgba(4, 4, 4, 0.95) 70%, rgba(4, 4, 4, 1) 100%)
     }
 
-    #experience .container h2 {
-        font-size: 32px
+    #about {
+        min-height: fit-content;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     .experience-card {
@@ -1987,16 +1803,6 @@ main>section {
     #experience .tech-tags span {
         font-size: 12px;
         padding: 6px 12px
-    }
-
-    #projects .container h2 {
-        font-size: 36px;
-        margin-bottom: 10px
-    }
-
-    #projects .container p {
-        font-size: 16px;
-        padding: 0 10px
     }
 
     .card-stack-container {
@@ -2054,7 +1860,24 @@ main>section {
         gap: 8px
     }
 
-    #contact .back-to-top {
-        display: none
+    .cta-email-btn {
+        max-width: 200px;
+        font-size: 16px;
+        padding: 14px;
+    }
+}
+
+@media (orientation: landscape) {
+    section {
+        height: auto;
+        max-height: 1080px;
+    }
+}
+
+@media (orientation: portrait) {
+
+    .hero,
+    #about {
+        height: 700px;
     }
 }
