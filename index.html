@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Borel&family=Comfortaa:wght@400;600&family=Outfit:wght@200;300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Borel&family=Comfortaa:wght@400;600&family=Gochi+Hand&family=Outfit:wght@200;300;400;500;600;700;800&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -318,8 +318,35 @@
         </div>
 
         <div class="card-stack-container">
+          <!-- Left swipe hint -->
+          <div class="external-hint external-hint-left">
+            <svg class="hint-arrow" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+              <!-- Curved line pointing outward to the left -->
+              <path d="M 80 40 Q 50 20, 20 40" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" />
+              <!-- Arrowhead pointing left -->
+              <path d="M 23 34 L 20 40 L 26 40" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+
+            </svg>
+            <span class="hint-text">swipe to visit</span>
+          </div>
+
           <div class="card-stack">
             <!-- Cards rendered via JS -->
+          </div>
+
+          <!-- Right swipe hint -->
+          <div class="external-hint external-hint-right">
+            <svg class="hint-arrow" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+              <!-- Curved line pointing outward to the right -->
+              <path d="M 40 40 Q 70 20, 100 40" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" />
+              <!-- Arrowhead pointing right -->
+              <path d="M 97 34 L 100 40 L 95 40" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="hint-text">next project</span>
           </div>
         </div>
       </div>

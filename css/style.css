@@ -134,6 +134,10 @@ nav .nav-links a:hover {
     transform: scale(1.1)
 }
 
+nav .back-to-top:active {
+    transform: scale(0.95)
+}
+
 nav .social {
     position: absolute;
     right: var(--spacing-md);
@@ -855,6 +859,74 @@ main>section {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
+    position: relative;
+    padding: 0 40px;
+}
+
+.external-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInHint 0.8s ease 1s forwards;
+}
+
+
+.hint-arrow {
+    width: 100px;
+    height: 60px;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+}
+
+.external-hint-left .hint-arrow {
+    animation: arrowPulseLeft 2s ease-in-out infinite;
+}
+
+.external-hint-right .hint-arrow {
+    animation: arrowPulseRight 2s ease-in-out infinite;
+}
+
+.hint-text {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    white-space: nowrap;
+    font-family: 'Gochi Hand', var(--font-casual);
+}
+
+@keyframes arrowPulseLeft {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateX(-5px);
+        opacity: 0.9;
+    }
+}
+
+@keyframes arrowPulseRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateX(5px);
+        opacity: 0.9;
+    }
+}
+
+/* Mobile hints (hidden by default, shown on mobile) */
+.mobile-hints {
+    display: none;
 }
 
 .card-stack {
@@ -945,6 +1017,7 @@ main>section {
 
 .tech-tags {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-md)
 }
@@ -955,7 +1028,8 @@ main>section {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: var(--spacing-md);
     color: var(--color-text-secondary);
-    font-weight: 500
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .stack-card .card-content p {
@@ -966,37 +1040,64 @@ main>section {
     max-width: 90%
 }
 
-.github-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: 12px 30px;
-    background-color: var(--color-accent);
-    border: 2px solid var(--color-accent);
-    color: var(--color-text-primary);
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: var(--radius-full);
-    text-decoration: none;
-    transition: all var(--transition-normal);
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none
-}
-
-.stack-card:hover .github-btn {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto
-}
-
-.github-btn:hover {
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-2px)
-}
-
 .stack-card:nth-child(n) {
     z-index: 1
+}
+
+.swipe-hint {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(192, 68, 49, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(192, 68, 49, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--color-text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeInHint 0.5s ease 0.5s forwards;
+    pointer-events: none;
+    z-index: 5
+}
+
+.swipe-hint i {
+    font-size: 14px;
+    color: var(--color-accent);
+    animation: swipeLeftAnimation 2s ease-in-out infinite
+}
+
+@keyframes fadeInHint {
+    from {
+        opacity: 0;
+        transform: translateX(-10px)
+    }
+
+    to {
+        opacity: 0.8;
+        transform: translateX(0)
+    }
+}
+
+@keyframes swipeLeftAnimation {
+
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(-5px)
+    }
+}
+
+.stack-card:not(:last-child) .swipe-hint {
+    opacity: 0;
+    animation: none
 }
 
 #certifications {
@@ -1406,6 +1507,34 @@ main>section {
     .cursor-dot {
         display: none
     }
+
+    /* External hint responsive rules */
+    .card-stack-container {
+        gap: 30px !important;
+        padding: 0 20px !important;
+    }
+
+    .hint-arrow {
+        width: 70px !important;
+        height: 50px !important;
+    }
+
+    .hint-text {
+        font-size: 12px !important;
+    }
+
+    .stack-card .card-content h3 {
+        font-size: 28px;
+    }
+
+    .tech-tags span {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .stack-card .card-content p {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -1661,6 +1790,52 @@ main>section {
     #contact .back-to-top {
         display: none
     }
+
+    /* Mobile hint responsive rules */
+    .card-stack-container {
+        flex-direction: row !important;
+        gap: 0 !important;
+        padding: 0 !important;
+    }
+
+    .card-stack {
+        width: 100% !important;
+        max-width: 600px !important;
+    }
+
+    .external-hint {
+        display: none !important;
+    }
+
+    .mobile-hints {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        pointer-events: none;
+    }
+
+    .mobile-hint {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(8px);
+        padding: 6px 12px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0.7;
+    }
+
+    .mobile-hint span {
+        font-size: 10px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.6);
+        font-family: 'Gochi Hand', var(--font-casual);
+    }
 }
 
 @media screen and (max-width:480px) and (orientation: portrait) {
@@ -1867,6 +2042,7 @@ main>section {
     }
 }
 
+/* Orientation-based media queries */
 @media (orientation: landscape) {
     section {
         height: auto;

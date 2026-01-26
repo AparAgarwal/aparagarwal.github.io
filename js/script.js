@@ -31,34 +31,53 @@ const CONFIG = {
 
 const PROJECTS_DATA = [
     {
+        title: "Code Editor",
+        description: "A code editor with syntax highlighting, auto-completion, and real-time code execution.",
+        tech: ["HTML", "CSS", "JavaScript", "Git", "GitHub"],
+        github: "https://github.com/AparAgarwal/code-editor",
+        liveDemo: "https://code.aparagarwal.tech/"
+    },
+    {
+        title: "Portfolio",
+        description: "A modern, responsive portfolio website showcasing my skills, projects, and contact information. (This website)",
+        tech: ["HTML", "CSS", "JavaScript", "Git", "GitHub"],
+        github: "https://github.com/AparAgarwal/Portfolio",
+        liveDemo: "https://aparagarwal.tech/"
+    },
+    {
         title: "News Website",
         description: "Clean and mobile-friendly news website showcasing up-to-date articles with a focus on readability and responsiveness.",
         tech: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/AparAgarwal/News-Website"
+        github: "https://github.com/AparAgarwal/News-Website",
+        liveDemo: "https://news.aparagarwal.tech/"
     },
     {
         title: "Kernel Canvas",
         description: "A drag-and-drop interface for Docker container management with real-time monitoring and visual orchestration.",
         tech: ["React", "Node.js", "Docker", "Material-UI", "Socket.io"],
-        github: "https://github.com/AparAgarwal/KernelCanvas"
+        github: "https://github.com/AparAgarwal/KernelCanvas",
+        liveDemo: null
     },
     {
         title: "Campus Navigator",
         description: "A Flutter-based mobile application designed to help users navigate around campus with interactive maps, real-time location tracking, and route planning.",
         tech: ["Flutter", "Dart", "Google Maps API", "OpenRouteService"],
-        github: "https://github.com/AparAgarwal/campus-navigator"
+        github: "https://github.com/AparAgarwal/campus-navigator",
+        liveDemo: null
     },
     {
         title: "URL Shortener",
         description: "A modern, secure URL shortening service with user authentication, click analytics, input validation, and a clean web interface with RESTful API.",
         tech: ["Node.js", "Express", "MongoDB", "JWT", "EJS"],
-        github: "https://github.com/AparAgarwal/url-shortener"
+        github: "https://github.com/AparAgarwal/url-shortener",
+        liveDemo: "https://url.aparagarwal.tech/"
     },
     {
         title: "Library Management System",
         description: "A full-stack library management platform with robust backend architecture, role-based access control, and Docker-optimized deployment.",
         tech: ["React", "Node.js", "Express", "PostgreSQL", "Redis", "Docker"],
-        github: "https://github.com/AparAgarwal/library-management-v2"
+        github: "https://github.com/AparAgarwal/library-management-v2",
+        liveDemo: null
     },
 ];
 
@@ -332,6 +351,13 @@ const renderProjectCards = (container, projects) => {
     projects.forEach(project => {
         const card = document.createElement('div');
         card.className = 'stack-card';
+        card.dataset.github = project.github;
+        card.dataset.liveDemo = project.liveDemo ?? '';
+
+        // Determine hint text based on what's available
+        const hasLiveDemo = project.liveDemo && project.liveDemo !== '';
+        const hintText = hasLiveDemo ? 'Swipe for Live Demo' : 'Swipe for GitHub';
+
         card.innerHTML = `
             <div class="card-header">
                 <div class="window-dots">
@@ -346,7 +372,14 @@ const renderProjectCards = (container, projects) => {
                     ${project.tech.map(t => `<span>${t}</span>`).join('')}
                 </div>
                 <p>${project.description}</p>
-                <a href="${project.github}" target="_blank" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <div class="mobile-hints">
+                <div class="mobile-hint mobile-hint-left">
+                    <span>← ${hintText}</span>
+                </div>
+                <div class="mobile-hint mobile-hint-right">
+                    <span>Next Project →</span>
+                </div>
             </div>
         `;
         container.appendChild(card);
@@ -492,7 +525,39 @@ const initializeCardStack = (stackContainer) => {
 
         if (Math.abs(diffX) > threshold) {
             const direction = diffX > 0 ? 1 : -1;
-            swapTopCard(activeCard, direction);
+
+            // Swipe right: discard and show next card
+            if (direction > 0) {
+                swapTopCard(activeCard, direction);
+            }
+            // Swipe left: redirect to demo/repo
+            else {
+                // Capture card reference before we reset activeCard
+                const cardToReset = activeCard;
+
+                // Determine which URL to open: liveDemo if available, otherwise GitHub
+                const liveDemo = cardToReset.dataset.liveDemo;
+                const redirectUrl = (liveDemo && liveDemo !== '' && liveDemo !== 'null')
+                    ? liveDemo
+                    : cardToReset.dataset.github;
+
+                // Add visual feedback
+                cardToReset.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+                cardToReset.style.transform = 'translateX(-100px) scale(0.95)';
+                cardToReset.style.opacity = '0.7';
+
+                // Open link and reset card properly
+                setTimeout(() => {
+                    window.open(redirectUrl, '_blank');
+
+                    // Reset card to original state
+                    setTimeout(() => {
+                        cardToReset.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease';
+                        cardToReset.style.transform = '';
+                        cardToReset.style.opacity = '';
+                    }, 100);
+                }, 200);
+            }
         } else {
             activeCard.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
             activeCard.style.transform = 'scale(1) translateY(0)';
